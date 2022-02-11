@@ -1,52 +1,80 @@
-# Prerequisites
-*.d
+// A simple C program to introduce
+// a linked list
+#include <stdio.h>
+#include <stdlib.h>
+ 
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+struct Node {
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    int data;
+    
+    struct Node* next;
+};
+ void printList( struct Node* n)
+{
 
-# Precompiled Headers
-*.gch
-*.pch
+    while (n != NULL) {
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+        printf("%d",n->data);
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+        n = n->next;
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+    }
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+}
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+
+// Program to create a simple linked
+// list with 3 nodes
+
+int main()
+{
+ int value ;
+    struct Node* head = value;
+
+    struct Node* second = value;
+
+    struct Node* third = value;
+ 
+
+    // allocate 3 nodes in the heap
+
+    head = (struct Node*)malloc(sizeof(struct Node));
+
+    second = (struct Node*)malloc(sizeof(struct Node));
+
+    third = (struct Node*)malloc(sizeof(struct Node))
+   
+
+    head->data = 1; // assign data in first node
+
+    head->next = second; // Link first node with
+
+  
+  
+ 
+
+    // assign data to second node
+
+    second->data = 2;
+ 
+
+    // Link second node with the third node
+
+    second->next = third;
+ 
+
+  
+
+ 
+
+    third->data = 3; // assign data to third node
+    third->next = NULL;
+ 
+ 
+
+  
+ printList(head);
+
+    return 0;
+}
